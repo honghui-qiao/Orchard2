@@ -5,7 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Orchard.DisplayManagement;
-using Orchard.Environment.Extensions.Folders;
+using Orchard.Environment.Extensions.Manifests;
 using Orchard.Environment.Shell.Data;
 
 namespace Orchard.Cms.Web
@@ -30,7 +30,7 @@ namespace Orchard.Cms.Web
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddThemingHost();
-            services.AddThemeFolder("Themes");
+            services.AddManifestDefinition("Theme.txt");
             services.AddSitesFolder("App_Data", "Sites");
             services.AddModuleServices(Configuration);
         }
