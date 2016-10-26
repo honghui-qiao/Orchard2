@@ -96,7 +96,7 @@ namespace Orchard.Hosting
             // Load all extensions and features so that the controllers are
             // registered in ITypeFeatureProvider and their areas definedin the application
             // conventions.
-            _extensionManager.LoadFeatures(_extensionManager.AvailableFeatures());
+            _extensionManager.LoadFeatures(_extensionManager.GetExtensions().Features);
 
             // Is there any tenant right now?
             var allSettings = _shellSettingsManager.LoadSettings()
